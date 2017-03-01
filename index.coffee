@@ -1,5 +1,4 @@
 'use strict'
-# require 'coffee-script'
 through = require 'through'
 jade = require 'react-jade'
 
@@ -8,7 +7,6 @@ module.exports = (file, opt)->
     input = ''
     write = (chunk)-> input += chunk
     end = ->
-        #template = jade.compileClient input
         try
             template = jade.compile input, filename: file
         catch err
